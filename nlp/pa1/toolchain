@@ -1,0 +1,22 @@
+#! /bin/bash
+
+# This is the chaining script of the trigram HMM tagger.
+# It could serve as a sample of how to use this tools.
+# It use 4 classes for rare words. All settings are inline with task three of this assignment.
+
+
+# Normalize traning data, change rare words(occurence < 5) in to four classes(all numeric, all caps, last capital words, and other)
+echo "Normalizing traning set..."
+python reduce_rare.py gene.train four_class_reduce > gene.train.reduced
+
+# Train trigram HMM
+echo "Traning trigram HMM..."
+python count_freqs.py gene.train.reduced > gene.counts
+
+# Decoding on dev dataset
+echo "Decoding on dev dataset..."
+python sol.py gene.counts gene.dev four_class_reduce > gene_dev.out
+
+# Evaluation
+echo "Evaluating on dev dataset..."
+python eval_gene_tagger.py gene.key gene_dev.out
