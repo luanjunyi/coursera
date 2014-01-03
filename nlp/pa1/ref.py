@@ -98,7 +98,8 @@ def viterbi(hmm, sentence):
     # The Viterbi algorithm.
     # Create and initialize the chart.
     pi = {}
-    pi[0, "*", "*"] = 1.0
+    pi[0, "*", "*"] = 1.0 # Here it should be a large value like 1e100, setting it to 1.0 will result very small value of score for long sentence. Such that the comparasion
+                          # in max() will not be usefull since scores for all tag sequence will be zero.
     bp = {}
 
     # Run the main loop.
