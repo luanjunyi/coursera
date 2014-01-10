@@ -1,3 +1,9 @@
+# The one caveat is the probability of any tagging for long sentences can be too small.
+# There one sentence in the test data that will result in less than 1e-400 for the 
+# best tagging. The trick is to make the inital probability 1e100 instead of 1.0.
+# The solution provided by TA of this course didn't dealt with this and the solution was
+# wrong for that particular case.
+
 import sys, os, re, math
 from collections import defaultdict
 from reduce_rare import simple_reduce, four_class_reduce
