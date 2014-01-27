@@ -1,0 +1,3 @@
+python ibm1_train.py
+python ibm1_decode.py dev.es dev.en > dev.p1.out
+python eval_alignment.py dev.key dev.p1.out
