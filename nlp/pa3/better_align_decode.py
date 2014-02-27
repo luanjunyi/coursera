@@ -50,30 +50,3 @@ if __name__ == "__main__":
                 e_left.remove(i+1)
                 f_left.remove(r)
                 print "%d %d %d" % (k + 1, i + 1, r)
-        
-        # processed = set()
-        # for ei in e_left:
-        #     if ei == 0:
-        #         processed.add(ei)
-        #         continue
-        #     j, score = argmax([(j, adj_count(mat, ei, j)) for j in e_match[ei]])
-        #     if score > 0.0:
-        #         mat[ei][j] = 2
-        #         processed.add(ei)
-        #         if j != 0:
-        #             print "%d %d %d" % (k + 1, ei, j)
-        # e_left -= processed
-        
-        # processed = set()
-        # for fi in f_left:
-        #     if fi == 0:
-        #         processed.add(fi)
-        #         continue
-        #     j, score = argmax([(j, adj_count(mat, j, fi)) for j in f_match[fi]])
-        #     if score > 0.0:
-        #         mat[j][fi] = 2
-        #         processed.add(fi)
-        #         if j != 0:
-        #             print "%d %d %d" % (k + 1, j, fi)
-        # f_left -= processed
-
