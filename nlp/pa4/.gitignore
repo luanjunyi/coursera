@@ -1,0 +1,8 @@
+*.pyc
+*.out
+*.converted
+*.model
+*.train
+*.key
+*.test
+*.dev
